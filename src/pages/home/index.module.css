@@ -1,3 +1,47 @@
 .home { 
     color: black;
 }
+
+.pokemon-list-title {
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+    /* Primary_900 */
+
+    color: #091733;
+}
+
+.buttons {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.info-btn {
+    background-color: #263C66;
+    color: white;
+    border-left: #263C66;
+    border-radius: 20px 0px;
+
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 40% !important;
+    border-bottom-right-radius: 40% !important;
+
+    flex-basis: 100%;
+}
+
+.fav-btn {
+    background-color: #263C66;
+    color: white;
+    border-right: #263C66;
+
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 40% !important;
+    border-bottom-left-radius: 40% !important;
+    flex-basis: 100%;
+}
+

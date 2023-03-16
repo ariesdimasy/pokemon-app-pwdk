@@ -1,0 +1,29 @@
+.title { 
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+    /* Primary_900 */
+
+    color: #091733;
+}
+
+.bar {
+    height: 15px;
+    background-color: #091733;
+    
+    margin-bottom: 50px;
+}
+
+.bar-fill {
+    position: relative;
+    height: 100%;
+    background-color: #FF7A2E;
+    float: left;
+    
+}
+
+.list-info {
+   margin-bottom: 45px;
+}

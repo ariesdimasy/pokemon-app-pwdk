@@ -1,0 +1,7 @@
+.splash { 
+    height: 100vh;
+    background: #0E1F40;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
