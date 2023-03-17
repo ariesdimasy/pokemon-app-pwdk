@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Col, Row, Button } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 

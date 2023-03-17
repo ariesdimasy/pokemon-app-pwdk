@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 import {
@@ -78,8 +78,8 @@ const PokemonDetail = (props) => {
           </h3>
           <hr />
           <div style={{ marginTop: 30 }}>
-            {pokemonDetail?.stats?.map((item) => (
-              <Row>
+            {pokemonDetail?.stats?.map((item, i) => (
+              <Row key={i}>
                 <Col sm={6} xs={6} md={6}>
                   <div className={style["list-info"]}>{item.stat.name}</div>
                 </Col>
