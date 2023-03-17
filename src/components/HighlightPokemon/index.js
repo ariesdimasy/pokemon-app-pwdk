@@ -40,14 +40,14 @@ export default function HightlightPokemon() {
         <Col sm={24} lg={24} md={24} xs={24}>
           <CardPokemon style={{ padding: "-12px 0" }}>
             <Row>
-              <Col sm={11} xs={11} md={11} style={{ textAlign: "left" }}>
+              <Col sm={10} xs={10} md={10} style={{ textAlign: "left" }}>
                 <img
                   alt="example"
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${randPokemon}.png`}
-                  width={100}
+                  width={90}
                 />
               </Col>
-              <Col sm={13} xs={13} md={13}>
+              <Col sm={14} xs={14} md={14}>
                 <h3 style={{ textAlign: "left" }}> {pokemonDetail.name} </h3>
                 <p style={{ textAlign: "left", fontSize: 10 }}>
                   {pokemonDetail["desc"]}
