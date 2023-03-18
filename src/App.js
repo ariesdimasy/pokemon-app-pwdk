@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Favourite from "./pages/favourite";
 import PokemonDetail from "./pages/detail";
 import Splash from "./pages/splash";
+import FooterMenu from "./components/FooterMenu";
 
 import "./App.css";
 import { useState } from "react";
@@ -38,6 +39,7 @@ function App() {
       {show ? (
         <div className={"App"}>
           <RouterProvider router={router}></RouterProvider>
+          <FooterMenu></FooterMenu>
         </div>
       ) : (
         <Splash></Splash>

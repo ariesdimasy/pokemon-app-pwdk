@@ -1,10 +1,10 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 import {
   getDetailPokemon,
   getPokemonSpesiesDetail,
-} from "./../../api/pokemonApi";
+} from "../../api/pokemonApi";
 import { useParams } from "react-router-dom";
 
 import CardPokemon from "../../components/CardPokemon";
@@ -78,21 +78,23 @@ const PokemonDetail = (props) => {
           </h3>
           <hr />
           <div style={{ marginTop: 30 }}>
-            {pokemonDetail?.stats?.map((item, i) => (
-              <Row key={i}>
-                <Col sm={6} xs={6} md={6}>
-                  <div className={style["list-info"]}>{item.stat.name}</div>
-                </Col>
-                <Col sm={18} xs={18} md={18}>
-                  <div className={style["bar"]}>
-                    <div
-                      className={style["bar-fill"]}
-                      style={{ width: `${item.base_stat}%` }}
-                    ></div>
-                  </div>
-                </Col>
-              </Row>
-            ))}
+            {pokemonDetail.stats
+              ? pokemonDetail.stats.map((item, i) => (
+                  <Row key={i}>
+                    <Col sm={6} xs={6} md={6}>
+                      <div className={style["list-info"]}>{item.stat.name}</div>
+                    </Col>
+                    <Col sm={18} xs={18} md={18}>
+                      <div className={style["bar"]}>
+                        <div
+                          className={style["bar-fill"]}
+                          style={{ width: `${item.base_stat}%` }}
+                        ></div>
+                      </div>
+                    </Col>
+                  </Row>
+                ))
+              : ""}
           </div>
         </Col>
       </Row>

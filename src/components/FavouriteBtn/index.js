@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 import { Button } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 
 export default function FavouriteBtn(props) {
   return (
     <>
       <Button
-        icon={<HeartOutlined />}
+        icon={props.isLoved ? <HeartFilled /> : <HeartOutlined />}
         style={{
           backgroundColor: "#0E1F40",
           color: "white",
@@ -15,6 +15,7 @@ export default function FavouriteBtn(props) {
           marginRight: 10,
         }}
         href={props.href}
+        onClick={props.onClick}
       ></Button>
     </>
   );
