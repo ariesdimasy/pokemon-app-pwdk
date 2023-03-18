@@ -119,7 +119,7 @@ export default function Home() {
     <>
       {loading && <LoadingScreen></LoadingScreen>}
       <div className={style.home}>
-        <HightlightPokemon />
+        <HightlightPokemon addFavouritePokemon={addFavouritePokemon} />
 
         <h3 className={style["pokemon-list-title"]}>Pokemon List</h3>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 import { Col, Row } from "antd";
 import {
@@ -12,7 +12,7 @@ import ReadMoreBtn from "../../components/ReadMoreBtn";
 
 import style from "./index.module.css";
 
-export default function HightlightPokemon() {
+export default function HightlightPokemon(props) {
   const [randPokemon, _] = useState(Math.floor((Math.random() + 1) * 50));
   const [pokemonDetail, setPokemonDetail] = useState({});
 
@@ -54,7 +54,9 @@ export default function HightlightPokemon() {
                   {pokemonDetail["desc"]}
                 </p>
                 <p style={{ textAlign: "right" }}>
-                  <FavouriteBtn />
+                  <FavouriteBtn
+                    onClick={() => props.addFavouritePokemon(pokemonDetail)}
+                  />
                   <ReadMoreBtn id={randPokemon} />
                 </p>
               </Col>
