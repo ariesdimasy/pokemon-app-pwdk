@@ -11,30 +11,36 @@ import ReadMoreBtn from "../../components/ReadMoreBtn";
 import LoadingScreen from "../../components/LoadingScreen";
 
 import {
+  collection,
+  query,
+  onSnapshot,
+} from "firebase/firestore";
+import firestore from "./../../firebase/config";
+
+
+import {
   fetchFavouritePokemon,
   removeFavouritePokemon,
 } from "./../../redux/favourite/action";
 
 export default function Favourite() {
   const dispatch = useDispatch();
-  // const [favourites, setFavourites] = useState([]);
+  //const [favourites, setFavourites] = useState([]);
   // const [loading, setLoading] = useState(false);
   const favourites = useSelector(
     (state) => state.favouritePokemonReducer.favouritePokemons
   );
   const loading = useSelector((state) => state.favouritePokemonReducer.loading);
 
-  const getData = async () => {
-    dispatch(fetchFavouritePokemon());
-  };
-
   const deleteFavourite = (item) => {
     dispatch(removeFavouritePokemon(item));
   };
 
+
+
   useEffect(() => {
-    getData();
-  }, []);
+    dispatch(fetchFavouritePokemon());
+  },[]);
 
   return (
     <>
@@ -51,9 +57,10 @@ export default function Favourite() {
           </Row>
         </Col>
         <Col sm={24} lg={24} md={24} xs={24}>
+          {JSON.stringify(favourites)}
           {favourites
             ? favourites.map((item, index) => (
-                <CardPokemon style={{ padding: "-12px 0" }}>
+                <CardPokemon style={{ padding: "-12px 0" }} key={index}>
                   <Row key={index}>
                     <Col sm={10} xs={10} md={10} style={{ textAlign: "left" }}>
                       <img

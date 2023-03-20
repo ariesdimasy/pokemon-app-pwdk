@@ -27,12 +27,6 @@ async function getAllFavouritePokemons() {
 
 export function fetchFavouritePokemon() {
   return async (dispatch, getState) => {
-    dispatch({
-      type: FETCH_FAVOURITE_POKEMON,
-      payload: {
-        loading: true,
-      },
-    });
     const favourites = await getAllFavouritePokemons();
     dispatch({
       type: FETCH_FAVOURITE_POKEMON,
